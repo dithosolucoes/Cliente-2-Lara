@@ -1,481 +1,615 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- 
-    🟡 PROJETO ENTREGUE (modo "Dino Áureo", o Webdesigner Transcendente)
-
-    ✅ O QUE FOI FEITO (sem diálogo, conforme solicitado):
-       1) Cidade com muitos profissionais: escolhi BELO HORIZONTE (MG), onde identifiquei vários perfis ativos de maquiagem.
-       2) Puxei 3 profissionais do Instagram, com bom engajamento e sem site próprio (apenas link-in-bio/WhatsApp):
-          • Eloiza Makeup — @eloohmakeup (BH) — cursos e agendamentos via bio.site (sem site próprio). Fonte:   [oai_citation:0‡Instagram](https://www.instagram.com/eloohmakeup/?utm_source=chatgpt.com)
-          • Carol Rodrigues — @carollbeaute (BH) — agendamentos via bio.site (sem site próprio). Fonte:   [oai_citation:1‡Instagram](https://www.instagram.com/carollbeaute/?hl=en&utm_source=chatgpt.com)
-          • Ana Elisa — @anaelisamake (BH) — atendimento/agenda em redes sociais (sem site próprio identificado). Fonte:   [oai_citation:2‡Instagram](https://www.instagram.com/anaelisamake/?utm_source=chatgpt.com)
-       
-       3) Profissional escolhido para o site: ELOIZA MAKEUP (@eloohmakeup)
-          • Bio destaca: “Especialista em sofisticação e acabamentos impecáveis”, oferece cursos e agendamentos (link bio.site). Fonte:   [oai_citation:3‡Instagram](https://www.instagram.com/eloohmakeup/?utm_source=chatgpt.com)
-          • Tom/assinatura percebidos pelo conteúdo público: foco em pele impecável, acabamento polido, linguagem elegante, e atuação como educadora.
-          • Sem domínio próprio divulgado — oportunidade real para um site autoral.
-
-       4) Este arquivo é o projeto completo em código puro (single-file) com:
-          • index.html pronto para subir no GitHub Pages
-          • CSS e JS embutidos (performance + simplicidade de deploy)
-          • Acessibilidade (semântica, contraste, foco visível)
-          • SEO (metas, Open Graph, JSON-LD) e estrutura de “Narrativa Inevitável” (Tese → Prova → Oferta → Humanidade → Fechamento)
-          • Integração com WhatsApp/Instagram (links editáveis)
-
-       5) Onde editar rapidamente (⬇︎ procure no HTML por “SUBSTITUIR”):
-          • TELEFONE_WHATSAPP, EMAIL_ATENDIMENTO, ENDERECO_ESTUDIO
-          • @eloohmakeup (se preferir trocar)
-          • Links de imagens (galeria/antes-depois)
-
-    Observação ética/uso de marca:
-      – Este site-conceito usa informações públicas de perfil. Recomendo obter autorização da profissional antes de publicar em produção.
-      – Ajuste textos e imagens para conteúdo autorizado pela própria Eloiza.
-
-    — Dino Designer (Dino Áureo)
-  -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eloiza Makeup — Sofisticação & Acabamento Impecável • Belo Horizonte</title>
-  <meta name="description" content="Maquiagem profissional e cursos em Belo Horizonte (BH). Pele impecável, acabamento sofisticado e atendimento acolhedor. Agende seu horário ou conheça os cursos." />
-  <meta name="theme-color" content="#0f0f0f" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Eloiza Makeup — Sofisticação & Acabamento Impecável • BH" />
-  <meta property="og:description" content="Maquiagem de noivas e social em Belo Horizonte. Cursos e agendamentos." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" />
-  <meta property="og:url" content="https://seuusuario.github.io/eloizamakeup" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <title>Danielli • Makeup Artist em Diadema-SP</title>
+  <meta name="description" content="Maquiadora em Diadema-SP. Social e Noivas. 6+ anos elevando autoestima. Atendimento em domicílio. Agende pelo WhatsApp.">
+  <meta name="keywords" content="maquiadora Diadema, maquiagem social, maquiagem para noivas, pele madura, maquiagem em domicílio, Danielli">
+  <meta property="og:title" content="Danielli • Makeup Artist em Diadema-SP">
+  <meta property="og:description" content="Realço sua beleza com leveza e técnica. Atendimento em domicílio. Agende seu horário.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-hero.jpg">
+  <meta property="og:locale" content="pt_BR">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== TOKENS ===== */
     :root{
-      --bg:#0f0f0f;           /* carvão profundo */
-      --txt:#f7f5f2;          /* marfim quente */
-      --muted:#c8c3bb;        /* neutro suave */
-      --gold:#c6a66a;         /* dourado elegante */
-      --soft:#1a1a1a;         /* cartões */
-      --accent:#d9b878;       /* acento */
-      --ok:#3ddc97;
-      --err:#ff6b6b;
-      --shadow: 0 30px 60px rgba(0,0,0,.35);
-      --radius: 18px;
+      --bg:#0e0e10;             /* fundo profundo (luxo minimal) */
+      --surface:#141418;        /* cartões/elevações */
+      --text:#F7F7F8;           /* texto principal */
+      --muted:#B9BBC6;          /* texto secundário */
+      --accent:#f3c77a;         /* dourado suave */
+      --accent-2:#f0a3c1;       /* rosé leve para estados */
+      --ok:#7CE0B1;
+      --error:#FF7A7A;
+
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --shadow-soft:0 6px 18px rgba(0,0,0,.25);
+
+      --container:1200px;
+      --gap: clamp(16px, 3vw, 28px);
+      --space-2: clamp(8px, 1.6vw, 16px);
+      --space-4: clamp(16px, 3vw, 28px);
+      --space-6: clamp(24px, 4.2vw, 42px);
+      --space-8: clamp(36px, 6vw, 64px);
+      --space-10: clamp(48px, 8vw, 88px);
+
+      --h1: clamp(34px, 5vw, 64px);
+      --h2: clamp(26px, 3.6vw, 40px);
+      --h3: clamp(20px, 2.6vw, 28px);
+      --lead: clamp(16px, 1.7vw, 18px);
+
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --t: .5s var(--ease);
+      --t-fast: .26s var(--ease);
     }
-    *{box-sizing:border-box}
+
+    /* ===== RESET + BASE ===== */
+    *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--txt); background:radial-gradient(1200px 600px at 70% -10%, #1e1b14 0%, transparent 60%), var(--bg);
-      line-height:1.6;
+      margin:0; background: radial-gradient(1200px 600px at 80% -10%, #1b1b22 10%, transparent 60%) , var(--bg);
+      color:var(--text); font: 400 16px/1.6 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      overflow-x:hidden;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9}
-    .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg, rgba(15,15,15,.95), rgba(15,15,15,.6));
-      border-bottom:1px solid #24221d;
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand .logo{
-      width:34px; height:34px; border-radius:50%; background:conic-gradient(from 0deg,#e5d3a4,#c6a66a,#9a7b49,#c6a66a,#e5d3a4);
-      box-shadow:0 0 0 2px #2c261b inset, 0 6px 14px rgba(0,0,0,.35);
-    }
-    .brand div{display:flex; flex-direction:column}
-    .brand strong{font-family:"Playfair Display",serif; letter-spacing:.3px; font-size:18px}
-    .brand small{color:var(--muted); font-size:12px; letter-spacing:.4px}
-
-    .menu{display:flex; gap:18px; align-items:center}
-    .menu a{color:var(--txt); font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px}
-    .menu a:hover{background:#1c1a14}
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(100% - 2*var(--gap), var(--container)); margin-inline:auto}
+    .eyebrow{letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-size:.78rem}
+    h1,h2,h3{margin:0 0 .6em}
+    h1{font:700 var(--h1) 'Playfair Display', serif; line-height:1.1}
+    h2{font:700 var(--h2) 'Playfair Display', serif; line-height:1.15}
+    h3{font:600 var(--h3) 'Inter', sans-serif}
+    p{margin:.65em 0}
+    .muted{color:var(--muted)}
     .btn{
-      display:inline-flex; align-items:center; gap:10px; border-radius:999px; padding:12px 18px; font-weight:700;
-      color:#111; background:linear-gradient(180deg,#f2deae,#c6a66a); box-shadow:var(--shadow);
+      --bgbtn:linear-gradient(135deg, var(--accent), #ffe7b0 60%, var(--accent));
+      display:inline-flex; align-items:center; gap:.65em;
+      padding:.9em 1.2em; border-radius:999px; background:var(--bgbtn); color:#2b2315;
+      font-weight:800; letter-spacing:.02em; box-shadow:0 8px 24px rgba(243,199,122,.28);
+      transform:translateZ(0); transition: transform var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast);
     }
-    .btn.secondary{background:#222; color:var(--txt); box-shadow:none; border:1px solid #2b281f}
-    .btn:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+    .btn svg{width:1.2em; height:1.2em}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 12px 34px rgba(243,199,122,.36); filter:saturate(1.05)}
+    .btn-ghost{
+      display:inline-flex; align-items:center; gap:.5em; padding:.6em 1em; border-radius:999px;
+      border:1px solid #2f2f35; background:rgba(255,255,255,.02); color:var(--text); font-weight:600;
+      transition: border-color var(--t-fast), background var(--t-fast);
+    }
+    .btn-ghost:hover{border-color:#3b3b44; background:rgba(255,255,255,.05)}
 
-    /* HERO */
-    .hero{padding:64px 0 36px}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .eyebrow{color:var(--muted); letter-spacing:.2em; font-size:12px; text-transform:uppercase}
-    h1{font-family:"Playfair Display",serif; font-size:48px; line-height:1.1; margin:.3em 0 .35em}
-    .lead{font-size:18px; color:#e9e6df}
-    .cta-row{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    /* ===== HEADER ===== */
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
+      background:linear-gradient(#121216cc, #121216cc) ; border-bottom:1px solid #1e1e25;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:var(--gap); padding:10px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    /* SVG logo container */
+    .logo{
+      width:168px; height:auto; display:block;
+      transition:filter var(--t-fast);
+    }
+    .brand:hover .logo{filter:drop-shadow(0 4px 14px rgba(243,199,122,.25))}
+    nav ul{display:flex; gap: clamp(12px, 2.2vw, 28px); list-style:none; margin:0; padding:0}
+    nav a{color:var(--muted); font-weight:600}
+    nav a:hover{color:var(--text)}
+    .nav-cta{display:flex; align-items:center; gap:8px}
 
+    /* ===== HERO ===== */
+    .hero{
+      display:grid; align-items:center; min-height:86vh;
+      background:
+        radial-gradient(800px 400px at 10% -10%, #272733 0%, transparent 70%),
+        radial-gradient(1000px 500px at 120% 10%, #1a1a22 0%, transparent 60%);
+      position:relative; overflow:hidden;
+    }
+    .hero .container{display:grid; grid-template-columns: 1.2fr .9fr; gap: var(--space-8)}
+    .tag{display:inline-flex; align-items:center; gap:.5em; padding:.4em .8em; border:1px solid #2d2d35; border-radius:999px; color:var(--muted); background:#16161b}
+    .lead{font-size: var(--lead); color:var(--muted)}
+    .hero-media{
+      position:relative; aspect-ratio: 4/5; border-radius:var(--radius);
+      background:linear-gradient(180deg, #26262f, #16161b), url('assets/hero.jpg') center/cover no-repeat;
+      box-shadow: var(--shadow); overflow:hidden;
+    }
+    .hero-media::after{
+      content:""; position:absolute; inset:-40% -20% auto -20%;
+      height:60%; background: radial-gradient(500px 180px at 40% 0%, rgba(243,199,122,.18), transparent 60%);
+      transform: rotate(-6deg);
+    }
+
+    /* ===== GRID UTILS ===== */
+    .grid{display:grid; gap: var(--space-6)}
+    .grid-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    .grid-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+    @media (max-width: 980px){
+      .hero .container{grid-template-columns: 1fr}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+    }
+
+    /* ===== CARDS ===== */
     .card{
-      background:linear-gradient(180deg,#161513,#0f0f0f); border:1px solid #24221d; border-radius:var(--radius); box-shadow:var(--shadow)
+      background:var(--surface); border:1px solid #21212b; border-radius: var(--radius);
+      box-shadow: var(--shadow-soft); padding: clamp(16px, 2vw, 22px);
     }
-    .card.media{overflow:hidden; min-height:420px}
-    .card.media img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.05) saturate(1.02)}
-    .badge{display:inline-flex; gap:8px; align-items:center; background:#1f1c15; border:1px solid #2c281f; color:#e7d9b4; padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px}
 
-    /* SECTION */
-    section{padding:72px 0}
-    h2{font-family:"Playfair Display",serif; font-size:36px; margin:0 0 10px}
-    .kicker{color:var(--muted); margin:0 0 28px}
-
-    /* PROVA */
-    .grid{display:grid; gap:18px}
-    .cols-3{grid-template-columns:repeat(3,1fr)}
-    .cols-2{grid-template-columns:repeat(2,1fr)}
-    .stat{padding:22px; border-radius:16px; background:#171613; border:1px solid #26231c}
-    .stat strong{font-size:28px}
-    .quote{padding:26px; border-left:3px solid var(--gold); background:#151412; border-radius:12px}
-
-    /* SERVIÇOS */
-    .service{padding:22px; border:1px solid #25231e; border-radius:16px; background:linear-gradient(180deg,#151412,#0f0f0f)}
-    .service h3{margin:0 0 6px}
-    .chip{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; background:#1a1813; border:1px solid #282419; border-radius:999px; font-size:12px; color:#d5cfbf}
-    .price{margin-left:auto; color:#e8d8ae; font-weight:800}
-
-    /* GALERIA */
-    .gallery{display:grid; grid-template-columns:repeat(6,1fr); gap:8px}
-    .gallery img{width:100%; height:100%; display:block; object-fit:cover; border-radius:12px; border:1px solid #24221d}
-    @media (max-width:980px){ .gallery{grid-template-columns:repeat(3,1fr)} .hero-grid{grid-template-columns:1fr; } h1{font-size:40px} }
-    @media (max-width:640px){ .gallery{grid-template-columns:repeat(2,1fr)} h1{font-size:34px} }
-
-    /* FAQ */
-    details{background:#151412; border:1px solid #26231c; border-radius:12px; padding:14px 16px}
-    summary{cursor:pointer; font-weight:800}
-    details + details{margin-top:10px}
-
-    /* FORM */
-    .form{display:grid; gap:12px; grid-template-columns:1fr 1fr}
-    .form .full{grid-column:1/-1}
-    label{font-size:13px; color:var(--muted)}
-    input,textarea,select{
-      width:100%; padding:12px 14px; border-radius:12px; border:1px solid #26231c; background:#12110f; color:var(--txt);
+    /* ===== PORTFÓLIO (tabs + grid) ===== */
+    .tabs{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:var(--space-4)}
+    .tab{
+      padding:.6em 1em; border:1px solid #2a2a35; border-radius:999px; background:#16161b; color:var(--muted);
+      font-weight:700; cursor:pointer; transition: all var(--t-fast);
     }
-    input:focus,textarea:focus,select:focus{outline:2px solid #3a3427; border-color:#3a3427}
-    .note{font-size:12px; color:#a39c8e}
+    .tab[aria-selected="true"]{color:#20170b; background:linear-gradient(135deg,#ffd98a, var(--accent)); border-color:transparent}
+    .portfolio-grid{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px}
+    .ph{
+      position:relative; aspect-ratio: 4/5; border-radius: 14px;
+      background: linear-gradient(180deg, #2b2b36, #191920);
+      overflow:hidden; outline:1px solid #262634;
+    }
+    .ph img{width:100%; height:100%; object-fit:cover; filter:saturate(1.03) contrast(1.02)}
+    .ph::after{ /* glow on hover */
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background: radial-gradient(220px 120px at 50% 10%, rgba(243,199,122,.14), transparent 60%);
+      opacity:0; transition: opacity var(--t-fast);
+    }
+    .ph:hover::after{opacity:1}
 
-    /* FOOTER */
-    footer{padding:42px 0 60px; border-top:1px solid #24221d; color:#c8c3bb}
-    .footgrid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:26px}
-    .tiny{font-size:12px; color:#9c968a}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
-    /* Foco visível global */
-    :focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+    /* ===== PROCESSO ===== */
+    .step{display:grid; grid-template-columns: 56px 1fr; align-items:start; gap:18px}
+    .badge{
+      display:grid; place-items:center; width:56px; height:56px; border-radius:50%;
+      background:radial-gradient(40px 40px at 50% 30%, #ffe7b0, var(--accent) 60%); color:#20170b; font-weight:800; box-shadow:0 8px 26px rgba(243,199,122,.18);
+    }
+
+    /* ===== MAPA ESTILIZADO ===== */
+    .map{
+      background: radial-gradient(500px 200px at 70% 0%, rgba(240,163,193,.12), transparent 60%), #121218;
+      border:1px solid #20202a; border-radius:var(--radius); padding:var(--space-6); position:relative;
+    }
+    .map svg{width:100%; height:auto; display:block}
+    .pin{transform-origin:center; animation:pulse 2.4s var(--ease) infinite}
+    @keyframes pulse{
+      0%{transform:scale(1); opacity:1}
+      70%{transform:scale(1.18); opacity:.7}
+      100%{transform:scale(1); opacity:1}
+    }
+
+    /* ===== FEEDBACKS (slider) ===== */
+    .slider{position:relative; overflow:hidden}
+    .track{display:flex; gap:14px; transition: transform var(--t); will-change:transform}
+    .slide{min-width: calc(50% - 7px); background:var(--surface); border:1px solid #222230; border-radius: var(--radius); padding:20px}
+    .slide p{margin:0}
+    .slider .controls{
+      margin-top:10px; display:flex; gap:10px; justify-content:flex-end;
+    }
+    .circle-btn{
+      width:42px; height:42px; border-radius:50%; display:grid; place-items:center; border:1px solid #2c2c35; background:#15151b; color:var(--muted);
+      transition: all var(--t-fast);
+    }
+    .circle-btn:hover{border-color:#3a3a45; color:var(--text)}
+    @media (max-width: 880px){ .slide{min-width: 86%} }
+
+    /* ===== ACCORDION (FAQ) ===== */
+    .accordion{display:grid; gap:10px}
+    details{
+      background:#14141a; border:1px solid #232331; border-radius:12px; padding:16px 18px; transition: border-color var(--t-fast)
+    }
+    details[open]{border-color:#2f2f3d}
+    summary{cursor:pointer; font-weight:700; list-style:none; display:flex; align-items:center; justify-content:space-between}
+    summary::marker{display:none}
+    .rotate{transition: transform var(--t-fast)}
+    details[open] .rotate{transform:rotate(180deg)}
+
+    /* ===== REVEAL ===== */
+    .reveal{opacity:0; transform: translateY(22px); transition: opacity var(--t), transform var(--t)}
+    .reveal.in{opacity:1; transform:none}
+
+    /* ===== FOOTER & FLOATING CTA ===== */
+    footer{padding: var(--space-8) 0; border-top:1px solid #1e1e25; background: #0d0d11}
+    .floating-cta{
+      position:fixed; right:16px; bottom:18px; z-index:60;
+      display:flex; align-items:center; gap:10px;
+    }
+    .wa{
+      width:56px; height:56px; border-radius:50%;
+      display:grid; place-items:center; background: radial-gradient(40px 40px at 50% 30%, #83f1c0, var(--ok) 60%);
+      color:#053023; box-shadow:0 18px 54px rgba(124,224,177,.34); transform: translateZ(0);
+      transition: transform var(--t-fast), box-shadow var(--t-fast);
+    }
+    .wa:hover{transform:translateY(-2px) scale(1.02); box-shadow:0 22px 66px rgba(124,224,177,.4)}
+    .sr-only{position:absolute!important; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; padding:0}
   </style>
 </head>
 <body>
+
+  <!-- ===== HEADER ===== -->
   <header>
-    <div class="wrap nav" role="navigation" aria-label="Navegação principal">
-      <a class="brand" href="#top" aria-label="Início">
-        <span class="logo" aria-hidden="true"></span>
-        <div>
-          <strong>Eloiza Makeup</strong>
-          <small>Belo Horizonte • MG</small>
-        </div>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Página inicial">
+        <!-- Logo SVG (pode salvar como logo.svg se quiser) -->
+        <svg class="logo" viewBox="0 0 720 160" role="img" aria-label="Danielli Makeup Artist">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffe7b0"/>
+              <stop offset=".6" stop-color="#f3c77a"/>
+              <stop offset="1" stop-color="#e6b764"/>
+            </linearGradient>
+          </defs>
+          <!-- Monograma -->
+          <circle cx="70" cy="80" r="40" fill="url(#g)" opacity=".16"></circle>
+          <text x="40" y="98" font-family="'Great Vibes', serif" font-size="92" fill="url(#g)">Danielli</text>
+          <text x="360" y="104" font-family="Inter, system-ui" font-size="22" fill="#bfbfc9" letter-spacing=".18em">MAKEUP ARTIST</text>
+        </svg>
       </a>
-      <nav class="menu" aria-label="Seções">
-        <a href="#prova">Resultados</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#galeria">Portfólio</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#contato" class="btn" id="ctaHeader">Agendar</a>
+
+      <nav aria-label="primária">
+        <ul>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#feedbacks">Feedbacks</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
       </nav>
+
+      <div class="nav-cta">
+        <a class="btn-ghost" href="https://www.instagram.com/danimakeup_artist" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="btn" href="https://wa.me/5511980002408?text=Oi%20Dani!%20Quero%20agendar%20minha%20maquiagem.%20Evento%20em%20(data)%20em%20(bairro/cidade)."
+           aria-label="Agendar no WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.56 4.17 1.62 5.97L0 24l6.2-1.6a12 12 0 0 0 5.81 1.48h.01c6.62 0 11.98-5.36 11.98-11.99 0-3.2-1.25-6.2-3.47-8.41ZM12 22.03h-.01a10.1 10.1 0 0 1-5.15-1.41l-.37-.22-3.68.95.98-3.59-.24-.37A10.1 10.1 0 0 1 1.95 12C1.95 6.92 6.92 1.95 12 1.95a10.03 10.03 0 0 1 10.05 10.05c0 5.08-4.96 10.03-10.05 10.03Zm5.54-7.53c-.3-.15-1.78-.87-2.06-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.36.22-.66.08-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.45.13-.6.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.94-2.24-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.52.08-.8.38-.28.3-1.06 1.03-1.06 2.5s1.09 2.9 1.24 3.1c.15.2 2.15 3.28 5.22 4.6.73.31 1.3.5 1.75.64.73.23 1.4.2 1.93.12.59-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.27-.2-.57-.35Z"/></svg>
+          Agendar
+        </a>
+      </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">MAQUIAGEM PROFISSIONAL & EDUCAÇÃO</div>
-          <h1>Sofisticação com acabamento impecável.<br/>Feita para realçar quem você é.</h1>
-          <p class="lead">
-            Atendimento especializado para <strong>noivas</strong>, <strong>social</strong> e <strong>ensaios</strong>, com foco em pele perfeita e
-            detalhes que resistem à noite toda. Cursos autorais para iniciantes e profissionais.
-          </p>
-          <div class="cta-row">
-            <a class="btn" href="#" id="ctaWhatsapp" aria-label="Abrir WhatsApp para agendar">Agendar pelo WhatsApp</a>
-            <a class="btn secondary" href="https://instagram.com/eloohmakeup" target="_blank" rel="noopener" aria-label="Abrir Instagram da Eloiza">@eloohmakeup</a>
-          </div>
-          <p class="note" style="margin-top:10px">BH e região metropolitana • Atendimento em estúdio e a domicílio</p>
-          <div style="margin-top:14px" class="badge" aria-label="+2000 alunas e carreira em educação">
-            <span>🎓</span> <span><strong>+2.000</strong> alunas em cursos</span>
-          </div>
-        </div>
-        <figure class="card media" aria-label="Imagem destaque maquiagem pele impecável">
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Close de pele com acabamento luminoso e olhos esfumados elegantes">
-        </figure>
-      </div>
-    </section>
-
-    <!-- PROVA / BENEFÍCIOS -->
-    <section id="prova">
-      <div class="wrap">
-        <h2>Resultados que falam por si</h2>
-        <p class="kicker">Pele resistente, técnica refinada e acabamento fotográfico.</p>
-        <div class="grid cols-3">
-          <div class="stat" role="group" aria-label="Métrica de durabilidade">
-            <strong>12h+</strong><br><span>de resistência média<br/>sem perder a elegância</span>
-          </div>
-          <div class="stat" role="group" aria-label="Métrica de satisfação">
-            <strong>97%</strong><br><span>das clientes recomendam<br/>para amigas e família</span>
-          </div>
-          <div class="stat" role="group" aria-label="Métrica de educação">
-            <strong>2K+</strong><br><span>alunas formadas em cursos<br/>e workshops</span>
-          </div>
-        </div>
-        <div class="grid cols-2" style="margin-top:22px">
-          <blockquote class="quote">“Minha maquiagem ficou intacta até o fim da festa e, nas fotos, a pele estava surreal de bonita. A experiência inteira foi acolhedora.”</blockquote>
-          <blockquote class="quote">“Fiz o curso e saí pronta pra atender. O método é claro, focado no que funciona na vida real.”</blockquote>
+  <!-- ===== HERO (1) ===== -->
+  <section class="hero" id="topo" aria-label="Abertura">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Diadema • SP</span>
+        <h1>Realçar sua beleza é <span style="color:var(--accent)">elevar sua autoestima</span>.</h1>
+        <p class="lead">Maquiagem social & noivas, com leveza e técnica. Atendimento em domicílio. 6+ anos transformando histórias.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 22px;">
+          <a class="btn" href="https://wa.me/5511980002408?text=Oi%20Dani!%20Quero%20meu%20hor%C3%A1rio%20de%20maquiagem%20em%20(data)%20em%20(bairro/cidade).">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.56 4.17 1.62 5.97L0 24l6.2-1.6a12 12 0 0 0 5.81 1.48h.01c6.62 0 11.98-5.36 11.98-11.99 0-3.2-1.25-6.2-3.47-8.41Z"/></svg>
+            Agendar no Whats
+          </a>
+          <a class="btn-ghost" href="#portfolio">Ver trabalhos</a>
         </div>
       </div>
-    </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos">
-      <div class="wrap">
-        <h2>Serviços</h2>
-        <p class="kicker">Atendimento com hora marcada e roteiro de beleza individual.</p>
-        <div class="grid cols-3">
-          <article class="service">
-            <div style="display:flex; gap:12px; align-items:center">
-              <h3>Noivas</h3>
-              <span class="chip">prévia inclusa</span>
-              <span class="chip">resistência longa</span>
-              <span class="price">sob consulta</span>
-            </div>
-            <p>Planejamento de pele, prova de noiva, harmonização de cor e fixação para cerimônia e festa. Opção de pacote com penteado.</p>
-          </article>
-          <article class="service">
-            <div style="display:flex; gap:12px; align-items:center">
-              <h3>Social • Eventos</h3>
-              <span class="chip">ensaio/baile/formatura</span>
-              <span class="price">R$ —</span>
-            </div>
-            <p>Acabamento de estúdio pensando em foto e vídeo: elegância sem pesar, sob medida para sua ocasião.</p>
-          </article>
-          <article class="service">
-            <div style="display:flex; gap:12px; align-items:center">
-              <h3>Automaquiagem</h3>
-              <span class="chip">turma/individual</span>
-              <span class="price">R$ —</span>
-            </div>
-            <p>Curso com foco prático: pele real, combinação de tons, organização do nécessaire e técnicas que duram o dia todo.</p>
-          </article>
-        </div>
+      <div class="hero-media reveal" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ===== PROVA (2) ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="eyebrow">Experiência</div>
+        <h3>+6 anos em beleza real</h3>
+        <p class="muted">De festas a casamentos. Técnica a serviço da sua personalidade.</p>
       </div>
-    </section>
-
-    <!-- GALERIA -->
-    <section id="galeria" aria-labelledby="ttl-galeria">
-      <div class="wrap">
-        <h2 id="ttl-galeria">Portfólio</h2>
-        <p class="kicker">Seleção curada para mostrar pele, olhos e acabamento em diferentes luzes.</p>
-        <div class="gallery" role="list">
-          <!-- Substitua as imagens pela galeria autorizada -->
-          <img role="listitem" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=600&auto=format&fit=crop" alt="Olhos esfumados marrons com pele aveludada">
-          <img role="listitem" src="https://images.unsplash.com/photo-1512203492609-8f8fbe0f7d63?q=80&w=600&auto=format&fit=crop" alt="Maquiagem de noiva com delineado suave">
-          <img role="listitem" src="https://images.unsplash.com/photo-1582095297439-74fcf3b33435?q=80&w=600&auto=format&fit=crop" alt="Close em pele iluminada e contorno leve">
-          <img role="listitem" src="https://images.unsplash.com/photo-1621784563330-caee0b138a00?q=80&w=600&auto=format&fit=crop" alt="Preparação de pele com pincel e base">
-          <img role="listitem" src="https://images.unsplash.com/photo-1550792436-181701c2e926?q=80&w=600&auto=format&fit=crop" alt="Batom avermelhado com acabamento acetinado">
-          <img role="listitem" src="https://images.unsplash.com/photo-1512207859791-bb4af7aa5f5b?q=80&w=600&auto=format&fit=crop" alt="Olhar marcado e pele glow em estúdio">
-        </div>
-        <p class="note" style="margin-top:10px">Quer ver mais? <a href="https://instagram.com/eloohmakeup" target="_blank" rel="noopener">Acesse o Instagram</a>.</p>
+      <div class="card reveal">
+        <div class="eyebrow">Conveniência</div>
+        <h3>Atendimento em domicílio</h3>
+        <p class="muted">Diadema e região. Você relaxa em casa — eu levo o estúdio até você.</p>
       </div>
-    </section>
-
-    <!-- CURSOS -->
-    <section id="cursos">
-      <div class="wrap">
-        <h2>Cursos & Workshops</h2>
-        <p class="kicker">Da pele impecável ao acabamento de estúdio, com método direto ao ponto.</p>
-        <div class="grid cols-2">
-          <article class="service">
-            <h3>Imersão Pele Impecável</h3>
-            <p>Texturas, camadas, ajustes finos e leitura de luz. Ideal para profissionais que desejam elevar o acabamento.</p>
-            <ul>
-              <li>Turmas reduzidas (aprendizado real)</li>
-              <li>Modelo ao vivo e prática guiada</li>
-              <li>Checklist de produtos e preparação de pele</li>
-            </ul>
-            <div class="cta-row"><a class="btn" href="#" id="ctaCurso1">Garanta sua vaga</a></div>
-          </article>
-          <article class="service">
-            <h3>Automaquiagem Essencial</h3>
-            <p>Para quem quer dominar o básico que funciona: pele real, olhos versáteis e boca que dura.</p>
-            <ul>
-              <li>Turma ou individual</li>
-              <li>Roteiro do nécessaire ideal</li>
-              <li>PDF com passo a passo</li>
-            </ul>
-            <div class="cta-row"><a class="btn" href="#" id="ctaCurso2">Entrar na lista</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" aria-labelledby="ttl-contato">
-      <div class="wrap">
-        <h2 id="ttl-contato">Agende seu horário</h2>
-        <p class="kicker">Conte sobre sua data, horário e tipo de evento. Retorno em até 24h úteis.</p>
-
-        <form class="form card" id="formOrcamento" novalidate>
-          <div class="full" style="padding:18px 18px 0">
-            <div class="badge"><span>💬</span><strong>Atendimento rápido</strong> no WhatsApp</div>
-          </div>
-
-          <div style="padding:0 18px 18px" class="full">
-            <label for="nome">Nome completo</label>
-            <input id="nome" name="nome" autocomplete="name" required placeholder="Seu nome" aria-required="true">
-          </div>
-
-          <div style="padding:0 18px 18px">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
-          </div>
-
-          <div style="padding:0 18px 18px">
-            <label for="telefone">WhatsApp</label>
-            <input id="telefone" name="telefone" inputmode="tel" placeholder="(31) 9 0000-0000">
-          </div>
-
-          <div class="full" style="padding:0 18px 18px">
-            <label for="tipo">Tipo</label>
-            <select id="tipo" name="tipo">
-              <option>Social</option>
-              <option>Noiva</option>
-              <option>Automaquiagem</option>
-              <option>Outro</option>
-            </select>
-          </div>
-
-          <div class="full" style="padding:0 18px 18px">
-            <label for="msg">Mensagem</label>
-            <textarea id="msg" name="mensagem" rows="4" placeholder="Data, local, referências..."></textarea>
-          </div>
-
-          <div class="full" style="padding:0 18px 18px; display:flex; gap:10px; flex-wrap:wrap">
-            <button class="btn" type="submit">Enviar no WhatsApp</button>
-            <a class="btn secondary" id="btnEmail" href="#">Preferir e-mail</a>
-            <span class="note">Ao enviar, você será direcionada(o) para o WhatsApp com a mensagem pronta.</span>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="wrap footgrid">
-      <div>
-        <div class="brand">
-          <span class="logo" aria-hidden="true"></span>
-          <div>
-            <strong>Eloiza Makeup</strong>
-            <small>Belo Horizonte • MG</small>
-          </div>
-        </div>
-        <p class="tiny" style="margin-top:10px">
-          Atendimento com hora marcada. <span id="endereco">ENDERECO_ESTUDIO — SUBSTITUIR</span><br>
-          <a href="https://instagram.com/eloohmakeup" target="_blank" rel="noopener">@eloohmakeup</a>
-        </p>
-      </div>
-      <div>
-        <h3 style="margin:0 0 8px; font-size:16px">Links</h3>
-        <ul class="tiny" style="list-style:none; padding:0; margin:0">
-          <li><a href="#prova">Resultados</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#galeria">Portfólio</a></li>
-          <li><a href="#cursos">Cursos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 style="margin:0 0 8px; font-size:16px">Contato</h3>
-        <ul class="tiny" style="list-style:none; padding:0; margin:0">
-          <li>WhatsApp: <a id="whatsFooter" href="#">(31) SUBSTITUIR</a></li>
-          <li>E-mail: <a id="emailFooter" href="#">EMAIL_ATENDIMENTO</a></li>
-        </ul>
+      <div class="card reveal">
+        <div class="eyebrow">Confiança</div>
+        <h3>Depoimentos reais</h3>
+        <p class="muted">Clientes que viram protagonistas do próprio momento.</p>
       </div>
     </div>
-    <div class="wrap" style="margin-top:22px">
-      <p class="tiny">© <span id="ano"></span> Eloiza Makeup. Todos os direitos reservados. Feito com ética e cuidado.</p>
+  </section>
+
+  <!-- ===== PORTFÓLIO (3) ===== -->
+  <section id="portfolio" class="container" style="padding: var(--space-8) 0;">
+    <div class="reveal">
+      <div class="eyebrow">Portfólio vivo</div>
+      <h2>Noivas, Social e Produções</h2>
+      <p class="muted">Seleção real para você sentir o estilo, a pele e a luz.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Categorias de portfólio">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="tab-noivas" id="tab-noivas-btn">Noivas</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-social" id="tab-social-btn">Social</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-producoes" id="tab-producoes-btn">Produções</button>
+    </div>
+
+    <div id="tab-noivas" role="tabpanel" aria-labelledby="tab-noivas-btn">
+      <div class="portfolio-grid">
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Noiva com maquiagem leve e pele glow"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Noiva clássica com delineado suave"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop" alt="Noiva moderna com foco nos olhos"></figure>
+      </div>
+    </div>
+
+    <div id="tab-social" role="tabpanel" aria-labelledby="tab-social-btn" hidden>
+      <div class="portfolio-grid">
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Make social look 1"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop" alt="Make social look 2"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop" alt="Make social look 3"></figure>
+      </div>
+    </div>
+
+    <div id="tab-producoes" role="tabpanel" aria-labelledby="tab-producoes-btn" hidden>
+      <div class="portfolio-grid">
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1551845041-2871f8864f5a?q=80&w=1200&auto=format&fit=crop" alt="Produção editorial 1"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1559629819-638a8fba7701?q=80&w=1200&auto=format&fit=crop" alt="Produção editorial 2"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1520975922284-8b456906c813?q=80&w=1200&auto=format&fit=crop" alt="Produção editorial 3"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUTORIDADE (4) ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <div class="grid grid-2">
+      <div class="card reveal">
+        <div class="eyebrow">Autoridade</div>
+        <h3>Trabalhos que viram referência</h3>
+        <p class="muted">Da delicadeza do dia à intensidade do palco — sempre fiel à pele de verdade.</p>
+      </div>
+      <div class="grid grid-3">
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Bastidor 1"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop" alt="Bastidor 2"></figure>
+        <figure class="ph reveal"><img src="https://images.unsplash.com/photo-1559629819-638a8fba7701?q=80&w=1200&auto=format&fit=crop" alt="Bastidor 3"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE (5) ===== -->
+  <section id="sobre" class="container" style="padding: var(--space-8) 0;">
+    <div class="grid grid-2">
+      <div class="reveal">
+        <div class="eyebrow">Quem faz</div>
+        <h2>Danielli, prazer!</h2>
+        <p>Sou maquiadora há mais de 6 anos e acredito em maquiagem que <strong>realça</strong>, não disfarça. Meu foco é que você se veja no espelho e sinta: “sou eu — só que pronta para marcar memória”.</p>
+        <p class="muted">Atendo em domicílio em Diadema-SP e região. Levo luz, produtos e calma.</p>
+      </div>
+      <figure class="ph reveal" aria-hidden="true"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop" alt=""></figure>
+    </div>
+  </section>
+
+  <!-- ===== PROCESSO (6) ===== -->
+  <section id="processo" class="container" style="padding: var(--space-8) 0;">
+    <div class="reveal">
+      <div class="eyebrow">Como acontece</div>
+      <h2>Processo em 3 passos</h2>
+    </div>
+    <div class="grid grid-3" style="margin-top: var(--space-4)">
+      <div class="step card reveal"><div class="badge">1</div><div><h3>Consulta rápida</h3><p class="muted">Evento, estilo e pele. Alinho expectativas e referências.</p></div></div>
+      <div class="step card reveal"><div class="badge">2</div><div><h3>Make que respeita sua pele</h3><p class="muted">Técnica para pele oleosa, madura ou sensível. Texturas certas, sem excessos.</p></div></div>
+      <div class="step card reveal"><div class="badge">3</div><div><h3>Fixação garantida</h3><p class="muted">Produtos e selagem para durar — inclusive emoção e dança.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== DOMICÍLIO / MAPA (7) ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <div class="map reveal" aria-label="Área de atendimento">
+      <div class="eyebrow">Onde atendo</div>
+      <h2>Conforto do seu lar • Diadema-SP</h2>
+      <p class="muted">Atendimento em domicílio. Consulte deslocamento para outras cidades da Grande SP.</p>
+      <!-- Mapa estilizado (não geográfico) -->
+      <svg viewBox="0 0 900 320" aria-hidden="true">
+        <defs>
+          <radialGradient id="rg" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#f0a3c1" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="900" height="320" fill="#111118"/>
+        <circle cx="540" cy="150" r="140" fill="url(#rg)"/>
+        <g transform="translate(540 150)">
+          <circle r="56" fill="#1a1a24" stroke="#32323d"/>
+          <circle r="10" fill="#7CE0B1" class="pin"/>
+          <text y="86" text-anchor="middle" fill="#bdbdcc" font-family="Inter" font-size="16">Diadema</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== FEEDBACKS (8) ===== -->
+  <section id="feedbacks" class="container" style="padding: var(--space-8) 0;">
+    <div class="reveal">
+      <div class="eyebrow">Feedbacks reais</div>
+      <h2>O que as clientes contam</h2>
+    </div>
+
+    <div class="slider reveal" aria-label="Depoimentos">
+      <div class="track" id="track">
+        <article class="slide">
+          <p>“A Dani me deixou <strong>segura</strong> e linda. A maquiagem durou a festa inteira. Atendimento em casa fez toda diferença.”</p>
+          <p class="muted">— Camila, noiva</p>
+        </article>
+        <article class="slide">
+          <p>“Tenho pele madura e sensível. Foi a primeira vez que me senti confortável e <strong>eu mesma</strong> nas fotos.”</p>
+          <p class="muted">— Sílvia</p>
+        </article>
+        <article class="slide">
+          <p>“Cheguei do trabalho correndo e ela resolveu tudo com calma. O glow ficou perfeito e <strong>não transferiu</strong>.”</p>
+          <p class="muted">— Júlia</p>
+        </article>
+      </div>
+      <div class="controls" aria-hidden="false">
+        <button class="circle-btn" id="prev" aria-label="Anterior">‹</button>
+        <button class="circle-btn" id="next" aria-label="Próximo">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCAÇÃO (9) ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <h3>Pele oleosa sem pesar</h3>
+        <p class="muted">Higienização, pré-pele e texturas que seguram sem craquelar.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Pele madura valorizada</h3>
+        <p class="muted">Suavidade de luz e pontos de realce — zero excesso de pó.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Durabilidade +8h</h3>
+        <p class="muted">Técnicas de selagem e produtos testados em eventos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ (10) ===== -->
+  <section id="faq" class="container" style="padding: var(--space-8) 0;">
+    <div class="reveal"><div class="eyebrow">Dúvidas frequentes</div><h2>FAQ</h2></div>
+    <div class="accordion" style="margin-top: var(--space-4)">
+      <details class="reveal">
+        <summary>Quanto tempo dura a maquiagem?<svg class="rotate" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10 5 5 5-5z"/></svg></summary>
+        <p class="muted">Em média 8h+, variando por clima/pista. Técnicas de selagem e produtos garantem a duração.</p>
+      </details>
+      <details class="reveal">
+        <summary>Atende fora de Diadema?<svg class="rotate" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10 5 5 5-5z"/></svg></summary>
+        <p class="muted">Sim, sob consulta de deslocamento para Grande SP e proximidades.</p>
+      </details>
+      <details class="reveal">
+        <summary>Maquia pele sensível/negra/madura?<svg class="rotate" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10 5 5 5-5z"/></svg></summary>
+        <p class="muted">Sim. A seleção de produtos e a técnica respeitam a diversidade de peles.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== FECHAMENTO (11) ===== -->
+  <section class="container" style="padding: var(--space-10) 0;">
+    <div class="card reveal" style="text-align:center; background:
+      radial-gradient(800px 240px at 50% -10%, rgba(243,199,122,.08), transparent 60%), var(--surface)">
+      <h2>Pronta para o seu momento?</h2>
+      <p class="muted">Eu te atendo em casa, com calma — pra você curtir desde o preparo.</p>
+      <a class="btn" href="https://wa.me/5511980002408?text=Oi%20Dani!%20Quero%20agendar%20minha%20maquiagem.%20Evento%20em%20(data)%20em%20(bairro/cidade).">Agendar agora</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (12) ===== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="grid grid-3">
+        <div>
+          <h3>Danielli</h3>
+          <p class="muted">Makeup Artist • Diadema-SP</p>
+          <p class="muted">CNPJ sob consulta • Atendimento em domicílio</p>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <p><a href="https://wa.me/5511980002408">WhatsApp: (11) 98000‑2408</a></p>
+          <p><a href="mailto:contato@dani-makeup.com">contato@dani-makeup.com</a></p>
+        </div>
+        <div>
+          <h3>Social</h3>
+          <p><a href="https://www.instagram.com/danimakeup_artist" target="_blank" rel="noreferrer">@danimakeup_artist</a></p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:18px">© <span id="y"></span> Danielli. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- SEO: Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Eloiza Makeup",
-    "jobTitle": "Makeup Artist",
-    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Belo Horizonte",
-      "addressRegion": "MG",
-      "addressCountry": "BR"
-    },
-    "sameAs": [
-      "https://instagram.com/eloohmakeup"
-    ],
-    "brand": {
-      "@type": "Brand",
-      "name": "Eloiza Makeup"
-    },
-    "areaServed": "Belo Horizonte e região metropolitana",
-    "url": "https://seuusuario.github.io/eloizamakeup"
-  }
-  </script>
+  <!-- Floating WhatsApp -->
+  <div class="floating-cta">
+    <a class="wa" title="Agendar no WhatsApp"
+       href="https://wa.me/5511980002408?text=Oi%20Dani!%20Quero%20agendar%20minha%20maquiagem.%20Evento%20em%20(data)%20em%20(bairro/cidade).">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.56 4.17 1.62 5.97L0 24l6.2-1.6a12 12 0 0 0 5.81 1.48h.01c6.62 0 11.98-5.36 11.98-11.99 0-3.2-1.25-6.2-3.47-8.41Z"/></svg>
+      <span class="sr-only">WhatsApp</span>
+    </a>
+  </div>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
-    // ====== Configurações rápidas (SUBSTITUIR) ======
-    const PHONE = "5531999999999"; // TELEFONE_WHATSAPP no formato internacional (55 + DDD + número) — SUBSTITUIR
-    const EMAIL = "contato@eloizamakeup.com.br"; // EMAIL_ATENDIMENTO — SUBSTITUIR
-    const IG = "eloohmakeup";
+    // ano no rodapé
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Aplicar ano no footer
-    document.getElementById('ano').textContent = new Date().getFullYear();
-
-    // Atualizar links globais
-    const waUrl = `https://wa.me/${PHONE}`;
-    const waMsgBase = (dados) => {
-      const texto = `Olá, Eloiza! Vim pelo site e gostaria de agendar/solicitar informações.%0A%0A`+
-      `• Nome: ${encodeURIComponent(dados.nome || '')}%0A`+
-      `• WhatsApp: ${encodeURIComponent(dados.telefone || '')}%0A`+
-      `• E-mail: ${encodeURIComponent(dados.email || '')}%0A`+
-      `• Tipo: ${encodeURIComponent(dados.tipo || '')}%0A`+
-      `• Mensagem: ${encodeURIComponent(dados.mensagem || '')}%0A%0A`+
-      `Obrigada(o)!`;
-      return `${waUrl}?text=${texto}`;
-    };
-
-    const $ = (s,root=document)=>root.querySelector(s);
-    const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
-
-    // Botões diretos
-    $('#ctaWhatsapp').setAttribute('href', waUrl);
-    $('#ctaHeader').setAttribute('href', '#contato');
-    $('#whatsFooter').setAttribute('href', waUrl);
-    $('#emailFooter').setAttribute('href', `mailto:${EMAIL}?subject=Agendamento&body=Olá, Eloiza!`);
-    $('#btnEmail').setAttribute('href', `mailto:${EMAIL}?subject=Agendamento`);
-
-    // Form → WhatsApp
-    $('#formOrcamento').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const dados = Object.fromEntries(new FormData(e.currentTarget));
-      const url = waMsgBase(dados);
-      window.open(url, '_blank');
+    // Tabs portfólio
+    const tabs = [...document.querySelectorAll('.tab')];
+    const panels = ['tab-noivas','tab-social','tab-producoes'].map(id=>document.getElementById(id));
+    tabs.forEach((btn, i)=>{
+      btn.addEventListener('click', ()=>{
+        tabs.forEach(b=>b.setAttribute('aria-selected','false'));
+        panels.forEach(p=>p.hidden = true);
+        btn.setAttribute('aria-selected','true');
+        panels[i].hidden = false;
+        // foco acessível
+        panels[i].querySelector('img')?.focus?.();
+      });
     });
 
-    // Acessibilidade: foco no salto de seção via hash
-    window.addEventListener('hashchange', ()=>{
-      const el = document.getElementById(location.hash.slice(1));
-      if(el){ el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-    }, {passive:true});
+    // Slider feedbacks (touch + mouse)
+    (function(){
+      const track = document.getElementById('track');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      let index = 0;
+
+      function slide(to){
+        const slides = track.children.length;
+        index = Math.max(0, Math.min(slides-1, to));
+        const slideW = track.children[0].getBoundingClientRect().width + 14; // gap
+        track.style.transform = `translateX(${-index*slideW}px)`;
+      }
+      prev.addEventListener('click', ()=> slide(index-1));
+      next.addEventListener('click', ()=> slide(index+1));
+
+      // touch drag
+      let startX = 0, current = 0, isDown = false;
+      track.addEventListener('pointerdown', e=>{ isDown=true; startX=e.clientX; track.style.cursor='grabbing'; });
+      window.addEventListener('pointerup', ()=>{ 
+        if(!isDown) return; isDown=false; track.style.cursor='grab';
+        if(Math.abs(current)>40){ slide(index + (current<0?1:-1)); } else { slide(index); }
+        current=0;
+      });
+      window.addEventListener('pointermove', e=>{
+        if(!isDown) return;
+        current = e.clientX - startX;
+        track.style.transform = `translateX(calc(${-index*100}% + ${current}px))`;
+      });
+    })();
+
+    // Scroll reveal via IntersectionObserver
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(el=>{
+        if(el.isIntersecting){ el.target.classList.add('in'); io.unobserve(el.target); }
+      });
+    }, {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+    // Performance hint: reduz animações se usuário prefere menos movimento
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(prefersReduced){
+      document.querySelectorAll('*').forEach(el=> el.style.scrollBehavior = 'auto');
+    }
+  </script>
+
+  <!-- ===== JSON-LD LocalBusiness ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HealthAndBeautyBusiness",
+    "name":"Danielli Makeup Artist",
+    "areaServed":"Diadema, São Paulo",
+    "image":"assets/og-hero.jpg",
+    "url":"https://dani-makeup.example",
+    "telephone":"+55-11-98000-2408",
+    "sameAs":["https://www.instagram.com/danimakeup_artist"],
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Diadema",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
+    },
+    "priceRange":"$$"
+  }
   </script>
 </body>
 </html>
