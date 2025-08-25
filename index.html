@@ -1,163 +1,356 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Lara Makeup • Maquiadora Profissional</title>
-  <meta name="description" content="Maquiagem profissional que realça sua beleza. Noivas, eventos e aulas personalizadas. Agende já com Lara Makeup."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Lara Luíza | Maquiagem BH — beleza real, pele glow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Realço belezas reais através da maquiagem. Lourdes — Belo Horizonte. Noivas, madrinhas, fast makeup e artística. Agende pelo WhatsApp.">
+  <meta name="theme-color" content="#0f0e11">
+  <meta name="color-scheme" content="dark light">
+  <meta name="format-detection" content="telephone=no">
+  <!-- OG/Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lara Luíza | Maquiagem BH">
+  <meta property="og:description" content="Beleza real, pele glow — sem exagero. Lourdes — BH.">
+  <meta property="og:url" content="https://seu-projeto.vercel.app/"><!-- ↺ troque após publicar -->
+  <meta property="og:image" content="/img/lara-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Preload hero para LCP -->
+  <link rel="preload" as="image" href="/img/lara-hero.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ffc7a6%22/><text x=%2250%22 y=%2265%22 font-size=%2258%22 text-anchor=%22middle%22 font-family=%22Arial%22 fill=%22%230f0e11%22>L</text></svg>">
   <style>
-    :root {
-      --bg:#faf8f6; --paper:#fff; --ink:#1b1a19; --muted:#6b6663;
-      --accent:#c79a83; --accent2:#e6d2c6;
-      --radius:18px; --shadow:0 6px 26px rgba(0,0,0,.08);
+    :root{ --bg:#0f0e11; --panel:#16141a; --fg:#f6f1ee; --muted:#c7bdb8; --accent:#ffc7a6; --accent2:#c69c6d; --shadow:rgba(0,0,0,.45); --radius:16px; --gap:20px }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#faf7f5; --panel:#ffffff; --fg:#201a18; --muted:#6e5e58; --shadow:rgba(0,0,0,.08) }
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-    h1,h2,h3{font-family:"Playfair Display",serif;margin:0}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1160px;margin:auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid #eee}
-    nav{display:flex;gap:20px;align-items:center}
-    nav a:hover{color:var(--accent)}
-    .btn{display:inline-block;padding:.8rem 1.2rem;border-radius:12px;font-weight:600}
-    .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
-    .btn-outline{border:1px solid var(--accent);color:var(--accent)}
-    section{padding:64px 0}
-    .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:80px 0}
-    .hero img{border-radius:20px;box-shadow:var(--shadow)}
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;color:var(--fg);
+      background:radial-gradient(1200px 600px at 80% -10%, rgba(255,199,166,.18), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(198,156,109,.16), transparent 60%), var(--bg)}
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.1) blur(8px);-webkit-backdrop-filter:saturate(1.1) blur(8px);background:rgba(15,14,17,.6);border-bottom:1px solid rgba(246,241,238,.08)}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{inline-size:40px;block-size:40px;border-radius:50%;background:
+      radial-gradient(60% 60% at 35% 35%, var(--accent), transparent 60%),
+      radial-gradient(70% 70% at 70% 70%, var(--accent2), transparent 60%),
+      linear-gradient(135deg,#1a171d,#0b0a0c);box-shadow:0 6px 20px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06)}
+    h1{font:600 18px/1.2 ui-sans-serif;margin:0}
+    .ghost{color:var(--muted);font-size:13px}
+    .btn{--btn-bg:var(--fg);--btn-fg:#1a1210;display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.1rem;border-radius:999px;background:var(--btn-bg);color:var(--btn-fg);border:1px solid rgba(0,0,0,.12);text-decoration:none;font-weight:600;box-shadow:0 8px 20px var(--shadow);transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px var(--shadow)}
+    .btn.secondary{--btn-bg:transparent;--btn-fg:var(--fg);border-color:rgba(246,241,238,.18)}
+    section{padding:40px 0}
+    h3{font:800 22px/1.1 ui-sans-serif;margin:0 0 12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), var(--panel));border:1px solid rgba(246,241,238,.08);border-radius:var(--radius);padding:20px;box-shadow:0 10px 30px var(--shadow)}
     .grid{display:grid;gap:20px}
-    .services{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .card{background:var(--paper);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .faq-item{margin-bottom:14px}
-    .faq-item summary{font-weight:600;cursor:pointer;color:var(--accent)}
-    footer{background:#111;color:#ccc;padding:40px 20px}
-    footer a{color:#ccc}
-    footer small{display:block;margin-top:10px;font-size:.8rem;opacity:.8}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:56px 0}
+    .hero h2{font:800 clamp(28px,5vw,56px)/1.05 ui-sans-serif;margin:0 0 12px}
+    .lead{font-size:18px;color:var(--muted);max-width:58ch}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .chip{font:600 12px/1 ui-sans-serif;letter-spacing:.2px;color:#1b1210;background:rgba(255,199,166,.7);border:1px solid rgba(198,156,109,.25);border-radius:999px;padding:8px 12px}
+    .photo{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px var(--shadow);background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.5)), url('img/lara-hero.jpg') center/cover no-repeat}
+    .badge{position:absolute;right:14px;bottom:14px;padding:.6rem .8rem;border-radius:12px;background:rgba(0,0,0,.45);color:#fff;font:600 12px/1 ui-sans-serif;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px)}
+    /* SERVIÇOS */
+    .service .title{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .service small{color:var(--muted)}
+    .price{font-weight:800;color:var(--accent2)}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    /* ANTES/DEPOIS */
+    .bna{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+    .frame{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:#2a2623;box-shadow:0 8px 20px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.05)}
+    .before,.after{position:absolute;inset:0;background-size:cover;background-position:center}
+    .before{background-image:url('img/antes.jpg')}
+    .after{background-image:url('img/depois.jpg');clip-path:inset(0 50% 0 0)}
+    .slider{accent-color:var(--accent2);width:100%}
+    /* GALERIA */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .gallery img{width:100%;height:auto;border-radius:14px;display:block;box-shadow:0 6px 18px var(--shadow)}
+    .gallery button{padding:0;border:none;background:transparent;cursor:pointer}
+    dialog{border:none;border-radius:16px;max-width:min(92vw,900px);padding:0;box-shadow:0 30px 80px var(--shadow)}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .lightbox{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden}
+    .lightbox img{width:100%;height:auto;display:block}
+    .lightbox header,.lightbox footer{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+    .lightbox header{border-bottom:1px solid rgba(255,255,255,.06)}
+    .lightbox footer{border-top:1px solid rgba(255,255,255,.06)}
+    /* FAQ & FOOTER */
+    .faq details{border:1px solid rgba(246,241,238,.12);border-radius:12px;padding:14px}
+    .faq summary{cursor:pointer;font-weight:700}
+    footer{padding:36px 0;color:var(--muted)}
+    /* RESPONSIVO */
+    @media (max-width:900px){ .hero{grid-template-columns:1fr;padding:28px 0} .grid.cols-3,.grid.cols-2{grid-template-columns:1fr} .bna{grid-template-columns:1fr} }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
   </style>
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BeautySalon","name":"Lara Luíza - Maquiagem BH","description":"Realço belezas reais através da maquiagem. Lourdes — Belo Horizonte.","areaServed":"Belo Horizonte, MG","address":{"@type":"PostalAddress","addressLocality":"Lourdes","addressRegion":"MG","addressCountry":"BR"},"sameAs":["https://www.instagram.com/laraluizamakeup_","https://www.instagram.com/laraluizaart"],"priceRange":"R$"}
+  </script>
 </head>
 <body>
-
 <header>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0">
-    <h2 style="font-family:Playfair Display,serif;color:var(--accent)">Lara Makeup</h2>
-    <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Oi%20Lara!%20Quero%20agendar%20um%20horário." target="_blank">Agendar</a>
+  <div class="wrap nav" role="navigation" aria-label="Topo">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Lara Luíza</h1>
+        <div class="ghost">Maquiagem • Lourdes — BH</div>
+      </div>
+    </div>
+    <nav class="ghost" aria-label="Atalhos">
+      <a class="ghost" href="#servicos">Serviços</a> ·
+      <a class="ghost" href="#portfolio">Portfólio</a> ·
+      <a class="ghost" href="#sobre">Sobre</a> ·
+      <a class="ghost" href="#agendar">Agendar</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero container">
-  <div>
-    <h1>Realce sua <span style="color:var(--accent)">beleza autêntica</span></h1>
-    <p>Maquiagem profissional para noivas, eventos e aulas de automaquiagem. Mais de <strong>150 clientes transformadas</strong> e <strong>10 anos</strong> de experiência.</p>
-    <div style="margin-top:20px">
-      <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank">Agende agora</a>
-      <a class="btn btn-outline" href="https://instagram.com" target="_blank">Instagram</a>
-    </div>
-  </div>
-  <img src="https://picsum.photos/500/600" alt="Lara em ação maquiando cliente"/>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos">
-  <div class="container">
-    <h2>Serviços</h2>
-    <div class="grid services">
-      <div class="card"><h3>Maquiagem Social</h3><p>Perfeita para festas, formaturas e eventos especiais.</p><p><strong>R$ 180+</strong></p></div>
-      <div class="card"><h3>Noiva</h3><p>Do teste ao grande dia, com leveza e durabilidade.</p><p><strong>sob consulta</strong></p></div>
-      <div class="card"><h3>Automaquiagem 1:1</h3><p>Aula prática personalizada para você dominar sua beleza.</p><p><strong>2h • R$ 250</strong></p></div>
-      <div class="card"><h3>Penteado Essencial</h3><p>Ondas, coques e acabamentos rápidos para eventos.</p><p><strong>combo</strong></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFÓLIO -->
-<section id="portfolio" style="background:#fff5f0">
-  <div class="container">
-    <h2>Portfólio</h2>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-      <img src="https://picsum.photos/400/500?1" alt="Cliente 1">
-      <img src="https://picsum.photos/400/500?2" alt="Cliente 2">
-      <img src="https://picsum.photos/400/500?3" alt="Cliente 3">
-      <img src="https://picsum.photos/400/500?4" alt="Cliente 4">
-    </div>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section id="depoimentos">
-  <div class="container">
-    <h2>Depoimentos</h2>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-      <div class="card">“Make impecável que durou a noite toda. Recomendo demais!”<br><strong>- Ana P.</strong></div>
-      <div class="card">“A Lara me deixou confiante no meu grande dia. Gratidão!”<br><strong>- Júlia M.</strong></div>
-      <div class="card">“Aprendi na aula de automaquiagem truques que uso todo dia.”<br><strong>- Bruna S.</strong></div>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section id="sobre" style="background:#fff">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px">
-    <img src="https://picsum.photos/500/500" alt="Retrato da Lara" style="border-radius:50%;box-shadow:var(--shadow)">
+<main>
+  <!-- DOBRA 1 — Tese -->
+  <section class="wrap hero" id="inicio">
     <div>
-      <h2>Sobre Lara</h2>
-      <p>Sou maquiadora profissional e instrutora. Minha missão é realçar a beleza única de cada mulher com técnica, cuidado e leveza. Já atendi mais de <strong>150 clientes</strong> e ensinei <strong>60 alunas</strong> em cursos de automaquiagem.</p>
+      <h2>Beleza real, pele glow — sem exagero</h2>
+      <p class="lead">Maquiagem que respeita sua pele, seu momento e sua história. Noivas, madrinhas, formaturas e um glow rápido pra te colocar pronta em minutos.</p>
+      <div class="chips" aria-label="Sinais e parcerias">
+        <span class="chip">Lourdes — Belo Horizonte</span>
+        <span class="chip">Noivas • Madrinhas</span>
+        <span class="chip">Fast Makeup</span>
+        <span class="chip">Artística • @laraluizaart</span>
+      </div>
+      <div class="cta">
+        <a class="btn" id="ctaWhats" href="#" rel="noopener">Agendar no WhatsApp</a>
+        <a class="btn secondary" href="https://www.instagram.com/laraluizamakeup_/" target="_blank" rel="noopener">Ver portfólio no Instagram</a>
+      </div>
     </div>
-  </div>
-</section>
+    <figure class="photo" aria-label="Foto destaque — pele glow e olhar natural">
+      <figcaption class="badge">beleza natural ✨</figcaption>
+    </figure>
+  </section>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <h2>Perguntas Frequentes</h2>
-    <div class="faq-item"><details><summary>Quanto tempo dura a maquiagem?</summary><p>Entre 6 a 10 horas, dependendo da pele e do evento.</p></details></div>
-    <div class="faq-item"><details><summary>Você atende a domicílio?</summary><p>Sim, mediante consulta de disponibilidade.</p></details></div>
-    <div class="faq-item"><details><summary>Como funciona o pagamento?</summary><p>Aceito Pix, transferência ou dinheiro no dia.</p></details></div>
-    <div class="faq-item"><details><summary>Posso levar acompanhante?</summary><p>Sim, mas recomendo no máximo 1 para não atrapalhar a experiência.</p></details></div>
-  </div>
-</section>
+  <!-- DOBRA 2 — Prova rápida -->
+  <section class="wrap card" id="portfolio" aria-labelledby="ttl-portfolio">
+    <h3 id="ttl-portfolio">Antes & Depois</h3>
+    <div class="bna">
+      <div class="frame" aria-label="Comparador antes e depois">
+        <div class="before" role="img" aria-label="Antes — pele sem make"></div>
+        <div class="after split" role="img" aria-label="Depois — pele glow, correção natural"></div>
+      </div>
+      <div>
+        <p>Correções suaves, luz na medida e acabamento que resiste — sem perder você. Arraste para comparar.</p>
+        <input class="slider" type="range" min="0" max="100" value="50" aria-label="Controlar comparação antes/depois" id="bnaRange">
+      </div>
+    </div>
+  </section>
 
-<!-- CTA FINAL -->
-<section style="background:linear-gradient(to right,var(--accent),var(--accent2));color:#fff;text-align:center">
-  <div class="container">
-    <h2>Garanta sua data agora</h2>
-    <p>As vagas são limitadas. Agende já sua maquiagem com Lara.</p>
-    <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank" style="background:#111">Agendar no WhatsApp</a>
-  </div>
-</section>
+  <!-- DOBRA 3 — Oferta clara -->
+  <section class="wrap" id="servicos" aria-labelledby="ttl-serv">
+    <h3 id="ttl-serv">Serviços</h3>
+    <div class="grid cols-3">
+      <article class="card service">
+        <div class="title"><strong>Noiva Atemporal</strong> <span class="price">sob consulta</span></div>
+        <small>Provas, pele blindada, timeline do dia e coordenação com hair.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Noiva Atemporal">Quero detalhes</button></div>
+      </article>
+      <article class="card service">
+        <div class="title"><strong>Madrinha & Festa</strong> <span class="price">R$ —</span></div>
+        <small>Elegância que aparece nas fotos e resiste à noite toda.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Madrinha & Festa">Quero detalhes</button></div>
+      </article>
+      <article class="card service">
+        <div class="title"><strong>Fast Makeup</strong> <span class="price">R$ —</span></div>
+        <small>Make rápida, leve e com acabamento profissional — pele glow.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Fast Makeup">Quero detalhes</button></div>
+      </article>
+      <article class="card service">
+        <div class="title"><strong>Make Artística</strong> <span class="price">R$ —</span></div>
+        <small>Conceitos criativos e caracterização. Ref.: @laraluizaart.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Make Artística">Quero detalhes</button></div>
+      </article>
+      <article class="card service">
+        <div class="title"><strong>Auto Make (aula)</strong> <span class="price">R$ —</span></div>
+        <small>Técnicas na sua rotina, com seus produtos. 100% prática.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Aula de Auto Make">Quero detalhes</button></div>
+      </article>
+      <article class="card service">
+        <div class="title"><strong>Editorial & Marca</strong> <span class="price">R$ —</span></div>
+        <small>Produções para campanhas, catálogos e clipes.</small>
+        <div class="cta"><button class="btn secondary ask" data-service="Editorial & Marca">Quero detalhes</button></div>
+      </article>
+    </div>
+  </section>
 
-<!-- RODAPÉ -->
+  <!-- DOBRA 4 — Sobre + Form -->
+  <section class="wrap grid cols-2 card" id="sobre" aria-labelledby="ttl-sobre">
+    <div>
+      <h3 id="ttl-sobre">Sobre a Lara</h3>
+      <p>Maquiagem como cuidado: deixar a pele falar, iluminar o olhar e colocar você em cena com leveza. Estúdio em Lourdes — BH. Noivas, madrinhas, formaturas e ensaios. Quando a arte pede, assino como <strong>@laraluizaart</strong>.</p>
+      <div class="panel ghost" style="padding:18px;border:1px dashed rgba(246,241,238,.18);border-radius:14px">Atendo com hora marcada. Parcerias de espaço e hair em Lourdes — BH.</div>
+    </div>
+    <div class="card">
+      <h3>Agende seu horário</h3>
+      <form id="formAgenda" class="grid" autocomplete="on">
+        <label>Data do evento
+          <input type="date" name="data" required>
+        </label>
+        <label>Serviço
+          <select name="servico" required>
+            <option>Noiva Atemporal</option>
+            <option>Madrinha & Festa</option>
+            <option>Fast Makeup</option>
+            <option>Make Artística</option>
+            <option>Aula de Auto Make</option>
+            <option>Editorial & Marca</option>
+          </select>
+        </label>
+        <label>Seu nome
+          <input type="text" name="nome" placeholder="Seu nome" required>
+        </label>
+        <button class="btn" type="submit">Abrir WhatsApp com mensagem</button>
+        <p class="ghost">Você revisa a mensagem antes de enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- DOBRA 4.1 — Galeria -->
+  <section class="wrap" aria-labelledby="ttl-galeria">
+    <h3 id="ttl-galeria">Portfólio — looks recentes</h3>
+    <div class="gallery" id="galeria">
+      <!-- Troque as imagens em /gallery -->
+      <button aria-label="Abrir foto 1"><img loading="lazy" src="/gallery/g1.jpg" alt="Maquiagem pele glow — noiva"></button>
+      <button aria-label="Abrir foto 2"><img loading="lazy" src="/gallery/g2.jpg" alt="Olhos delineados e pele natural"></button>
+      <button aria-label="Abrir foto 3"><img loading="lazy" src="/gallery/g3.jpg" alt="Beleza madrinha — clássico"></button>
+      <button aria-label="Abrir foto 4"><img loading="lazy" src="/gallery/g4.jpg" alt="Maquiagem pele retinta impecável"></button>
+      <button aria-label="Abrir foto 5"><img loading="lazy" src="/gallery/g5.jpg" alt="Glow leve — editorial"></button>
+      <button aria-label="Abrir foto 6"><img loading="lazy" src="/gallery/g6.jpg" alt="Make artística colorida"></button>
+      <button aria-label="Abrir foto 7"><img loading="lazy" src="/gallery/g7.jpg" alt="Pele glow com lábios destaque"></button>
+      <button aria-label="Abrir foto 8"><img loading="lazy" src="/gallery/g8.jpg" alt="Sombra marrom esfumada suave"></button>
+      <button aria-label="Abrir foto 9"><img loading="lazy" src="/gallery/g9.jpg" alt="Noiva atemporal — BH"></button>
+    </div>
+  </section>
+
+  <!-- DOBRA 5 — FAQ -->
+  <section class="wrap faq" id="agendar" aria-labelledby="ttl-faq">
+    <h3 id="ttl-faq">Dúvidas rápidas</h3>
+    <div class="grid">
+      <details open>
+        <summary>Onde você atende?</summary>
+        <p>Base em Lourdes — BH. Para noivas e produções, atendo on‑site conforme agenda.</p>
+      </details>
+      <details>
+        <summary>O que é a Fast Makeup?</summary>
+        <p>Uma maquiagem leve e rápida, com pele glow e acabamento profissional — ideal para compromissos espontâneos.</p>
+      </details>
+      <details>
+        <summary>Como reservo a data de noiva?</summary>
+        <p>Usamos contrato e sinal para garantir seu dia. No formulário acima você já abre o WhatsApp com as infos principais.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
 <footer>
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-    <div>
-      <h3>Lara Makeup</h3>
-      <p>Maquiadora em São Paulo • Especialista em noivas e automaquiagem.</p>
-      <a href="https://instagram.com" target="_blank">Instagram</a> • 
-      <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
-    </div>
-    <div>
-      <h3>Informações</h3>
-      <a href="#">Política de Privacidade</a><br>
-      <a href="#">Termos de Serviço</a><br>
-      <a href="#">Política de Cancelamento</a>
-      <small>CNPJ 00.000.000/0001-00 • São Paulo/SP</small>
-    </div>
-  </div>
-  <div class="container" style="margin-top:20px;text-align:center">
-    <small>© <span id="year"></span> Lara Makeup • Todos os direitos reservados.</small>
+  <div class="wrap">
+    <p>© <span id="year"></span> Lara Luíza — Maquiagem BH • <a href="https://www.instagram.com/laraluizamakeup_/" target="_blank" rel="noopener">@laraluizamakeup_</a> • artística: <a href="https://www.instagram.com/laraluizaart" target="_blank" rel="noopener">@laraluizaart</a></p>
+    <p class="ghost">Design e código por Dino — clareza viva na web.</p>
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<!-- Lightbox + Whats + Modal Serviços -->
+<dialog id="dlg">
+  <div class="lightbox">
+    <header><strong>Portfólio</strong><button id="closeDlg" class="btn secondary" aria-label="Fechar">Fechar</button></header>
+    <img id="dlgImg" alt="">
+    <footer><a id="dlgCta" class="btn" href="#" target="_blank" rel="noopener">Agendar este estilo</a></footer>
+  </div>
+</dialog>
+
+<dialog id="modalServico" aria-labelledby="ms-titulo">
+  <div class="lightbox">
+    <header><strong id="ms-titulo">Detalhes do serviço</strong><button id="ms-close" class="btn secondary" aria-label="Fechar">Fechar</button></header>
+    <div style="padding:16px">
+      <p id="ms-texto" class="ghost"></p>
+    </div>
+    <footer><a id="ms-cta" class="btn" href="#" target="_blank" rel="noopener">Quero esse serviço</a></footer>
+  </div>
+</dialog>
+
+<script>
+  // ↺ TROQUE PELO NÚMERO COM DDI/DDD (só dígitos)
+  const WHATS_APP = "5531000000000"; // ex.: 5531999999999
+
+  // Whats CTA topo
+  const cta = document.getElementById('ctaWhats');
+  cta?.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const msg = encodeURIComponent("Oi, Lara! Vim do seu site e quero agendar uma maquiagem em Lourdes – BH. Pode me enviar as opções de horário/preço?");
+    window.open(`https://wa.me/${WHATS_APP}?text=${msg}`, '_blank', 'noopener');
+  });
+
+  // Form agendamento
+  const form = document.getElementById('formAgenda');
+  form?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const data = fd.get('data');
+    const serv = fd.get('servico');
+    const nome = fd.get('nome') || '—';
+    const msg = encodeURIComponent(`Oi, Lara! Eu sou ${nome}. Quero ${serv} na data ${data}.\nBase Lourdes – BH.\nPode me passar disponibilidade e valores?\n(Enviado pelo site)`);
+    window.open(`https://wa.me/${WHATS_APP}?text=${msg}`, '_blank', 'noopener');
+  });
+
+  // Antes/Depois
+  const slider = document.getElementById('bnaRange');
+  const split = document.querySelector('.after.split');
+  function setClip(v){ if(split) split.style.clipPath = `inset(0 ${100 - v}% 0 0)` }
+  slider?.addEventListener('input', e => setClip(e.target.value));
+  if(slider){ setClip(slider.value) }
+
+  // Lightbox da galeria
+  const gal = document.getElementById('galeria');
+  const dlg = document.getElementById('dlg');
+  const dlgImg = document.getElementById('dlgImg');
+  const dlgCta = document.getElementById('dlgCta');
+  gal?.addEventListener('click', (e)=>{
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    const img = btn.querySelector('img');
+    dlgImg.src = img.src; dlgImg.alt = img.alt;
+    const msg = encodeURIComponent(`Oi, Lara! Vi este look (${img.alt}) e quero agendar.`);
+    dlgCta.href = `https://wa.me/${WHATS_APP}?text=${msg}`;
+    dlg.showModal();
+  });
+  document.getElementById('closeDlg')?.addEventListener('click', ()=> dlg.close());
+
+  // Modal de Serviço com microcopy personalizada
+  const servicosCopy = {
+    "Noiva Atemporal": "Provas, pele blindada com longa duração, timeline do dia, sincronia com hair e fotografia. Clássico que fica lindo hoje e daqui 20 anos.",
+    "Madrinha & Festa": "Elegância que aparece nas fotos e aguenta a noite. Pele calibrada, olhos que realçam sua personalidade.",
+    "Fast Makeup": "Make leve e rápida para te deixar pronta com acabamento profissional. Ideal para compromissos de última hora.",
+    "Make Artística": "Criação autoral e caracterização para campanhas, clipes e editoriais. Assino como @laraluizaart quando o projeto pede voo livre.",
+    "Aula de Auto Make": "100% prática com seus produtos. Técnicas de pele, olhos e acabamento para sua rotina.",
+    "Editorial & Marca": "Beleza para fotos e vídeo com direção de look, continuidade e visão de marca."
+  };
+  document.querySelectorAll('.ask').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const nome = btn.dataset.service;
+      const ms = document.getElementById('modalServico');
+      document.getElementById('ms-titulo').textContent = nome;
+      document.getElementById('ms-texto').textContent = servicosCopy[nome] || '';
+      const msg = encodeURIComponent(`Oi, Lara! Quero ${nome}. Podemos ver data/valores?`);
+      document.getElementById('ms-cta').href = `https://wa.me/${WHATS_APP}?text=${msg}`;
+      ms.showModal();
+    });
+  });
+  document.getElementById('ms-close')?.addEventListener('click', ()=> document.getElementById('modalServico').close());
+
+  // Ano no rodapé
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
