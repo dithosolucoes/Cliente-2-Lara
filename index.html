@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Lara Makeup • Maquiadora Profissional</title>
+  <meta name="description" content="Maquiagem profissional que realça sua beleza. Noivas, eventos e aulas personalizadas. Agende já com Lara Makeup."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#faf8f6; --paper:#fff; --ink:#1b1a19; --muted:#6b6663;
+      --accent:#c79a83; --accent2:#e6d2c6;
+      --radius:18px; --shadow:0 6px 26px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    h1,h2,h3{font-family:"Playfair Display",serif;margin:0}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1160px;margin:auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid #eee}
+    nav{display:flex;gap:20px;align-items:center}
+    nav a:hover{color:var(--accent)}
+    .btn{display:inline-block;padding:.8rem 1.2rem;border-radius:12px;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+    .btn-outline{border:1px solid var(--accent);color:var(--accent)}
+    section{padding:64px 0}
+    .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:80px 0}
+    .hero img{border-radius:20px;box-shadow:var(--shadow)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .grid{display:grid;gap:20px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--paper);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .faq-item{margin-bottom:14px}
+    .faq-item summary{font-weight:600;cursor:pointer;color:var(--accent)}
+    footer{background:#111;color:#ccc;padding:40px 20px}
+    footer a{color:#ccc}
+    footer small{display:block;margin-top:10px;font-size:.8rem;opacity:.8}
+  </style>
+</head>
+<body>
 
+<header>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0">
+    <h2 style="font-family:Playfair Display,serif;color:var(--accent)">Lara Makeup</h2>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Oi%20Lara!%20Quero%20agendar%20um%20horário." target="_blank">Agendar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+  <div>
+    <h1>Realce sua <span style="color:var(--accent)">beleza autêntica</span></h1>
+    <p>Maquiagem profissional para noivas, eventos e aulas de automaquiagem. Mais de <strong>150 clientes transformadas</strong> e <strong>10 anos</strong> de experiência.</p>
+    <div style="margin-top:20px">
+      <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank">Agende agora</a>
+      <a class="btn btn-outline" href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <img src="https://picsum.photos/500/600" alt="Lara em ação maquiando cliente"/>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <h2>Serviços</h2>
+    <div class="grid services">
+      <div class="card"><h3>Maquiagem Social</h3><p>Perfeita para festas, formaturas e eventos especiais.</p><p><strong>R$ 180+</strong></p></div>
+      <div class="card"><h3>Noiva</h3><p>Do teste ao grande dia, com leveza e durabilidade.</p><p><strong>sob consulta</strong></p></div>
+      <div class="card"><h3>Automaquiagem 1:1</h3><p>Aula prática personalizada para você dominar sua beleza.</p><p><strong>2h • R$ 250</strong></p></div>
+      <div class="card"><h3>Penteado Essencial</h3><p>Ondas, coques e acabamentos rápidos para eventos.</p><p><strong>combo</strong></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFÓLIO -->
+<section id="portfolio" style="background:#fff5f0">
+  <div class="container">
+    <h2>Portfólio</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <img src="https://picsum.photos/400/500?1" alt="Cliente 1">
+      <img src="https://picsum.photos/400/500?2" alt="Cliente 2">
+      <img src="https://picsum.photos/400/500?3" alt="Cliente 3">
+      <img src="https://picsum.photos/400/500?4" alt="Cliente 4">
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <h2>Depoimentos</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <div class="card">“Make impecável que durou a noite toda. Recomendo demais!”<br><strong>- Ana P.</strong></div>
+      <div class="card">“A Lara me deixou confiante no meu grande dia. Gratidão!”<br><strong>- Júlia M.</strong></div>
+      <div class="card">“Aprendi na aula de automaquiagem truques que uso todo dia.”<br><strong>- Bruna S.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" style="background:#fff">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px">
+    <img src="https://picsum.photos/500/500" alt="Retrato da Lara" style="border-radius:50%;box-shadow:var(--shadow)">
+    <div>
+      <h2>Sobre Lara</h2>
+      <p>Sou maquiadora profissional e instrutora. Minha missão é realçar a beleza única de cada mulher com técnica, cuidado e leveza. Já atendi mais de <strong>150 clientes</strong> e ensinei <strong>60 alunas</strong> em cursos de automaquiagem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item"><details><summary>Quanto tempo dura a maquiagem?</summary><p>Entre 6 a 10 horas, dependendo da pele e do evento.</p></details></div>
+    <div class="faq-item"><details><summary>Você atende a domicílio?</summary><p>Sim, mediante consulta de disponibilidade.</p></details></div>
+    <div class="faq-item"><details><summary>Como funciona o pagamento?</summary><p>Aceito Pix, transferência ou dinheiro no dia.</p></details></div>
+    <div class="faq-item"><details><summary>Posso levar acompanhante?</summary><p>Sim, mas recomendo no máximo 1 para não atrapalhar a experiência.</p></details></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:linear-gradient(to right,var(--accent),var(--accent2));color:#fff;text-align:center">
+  <div class="container">
+    <h2>Garanta sua data agora</h2>
+    <p>As vagas são limitadas. Agende já sua maquiagem com Lara.</p>
+    <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank" style="background:#111">Agendar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div>
+      <h3>Lara Makeup</h3>
+      <p>Maquiadora em São Paulo • Especialista em noivas e automaquiagem.</p>
+      <a href="https://instagram.com" target="_blank">Instagram</a> • 
+      <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+    </div>
+    <div>
+      <h3>Informações</h3>
+      <a href="#">Política de Privacidade</a><br>
+      <a href="#">Termos de Serviço</a><br>
+      <a href="#">Política de Cancelamento</a>
+      <small>CNPJ 00.000.000/0001-00 • São Paulo/SP</small>
+    </div>
+  </div>
+  <div class="container" style="margin-top:20px;text-align:center">
+    <small>© <span id="year"></span> Lara Makeup • Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
